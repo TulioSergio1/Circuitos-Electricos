@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#F5F5F5</color>
+    <!-- Elementos interativos -->
+    <color name="button_color">#007BFF</color>
+    <color name="active_color">#A4D65E</color>
+    <!-- Alertas -->
+    <color name="error_color">#FF4C4C</color>
+    <!-- Texto -->
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#666666</color>
+    <!-- Detalhes e sombras -->
+    <color name="shadow_color">#003366</color>
+</resources>
