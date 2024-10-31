@@ -1,11 +1,18 @@
 package com.example.circuitoseltricos;
 
 import android.annotation.SuppressLint;
+import android.graphics.Paint;
+import android.graphics.fonts.Font;
+import android.graphics.fonts.FontStyle;
 import android.os.Bundle;
+import android.widget.SeekBar;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
+import androidx.core.provider.FontRequest;
+import androidx.core.provider.FontsContractCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
