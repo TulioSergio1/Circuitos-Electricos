@@ -12,137 +12,149 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/lightView"
+            android:layout_width="307dp"
+            android:layout_height="291dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="635dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/light_circle"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
             android:id="@+id/imageView9"
             android:layout_width="250dp"
             android:layout_height="150dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/placa_solar"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="12dp"
+            android:layout_height="109dp"
+            android:background="@drawable/cabo_preto"
+            app:layout_constraintBottom_toTopOf="@+id/imageView10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.601"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+        <ImageView
             android:id="@+id/imageView8"
-            android:layout_width="29dp"
-            android:layout_height="89dp"
+            android:layout_width="9dp"
+            android:layout_height="107dp"
+            android:background="@drawable/cabo_vermelho"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.435"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="9dp"
+            android:layout_height="109dp"
             android:background="@drawable/cabo_vermelho"
             app:layout_constraintBottom_toTopOf="@+id/imageView10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.349"
+            app:layout_constraintHorizontal_bias="0.385"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView9"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:layout_width="32dp"
-            android:layout_height="92dp"
-            android:background="@drawable/cabo_preto_invertido"
-            app:layout_constraintBottom_toTopOf="@+id/imageView10"
+            android:id="@+id/imageView5"
+            android:layout_width="9dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/cabo_preto"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.653"
+            app:layout_constraintHorizontal_bias="0.562"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            app:layout_constraintVertical_bias="0.611" />
 
         <ImageView
-            android:layout_width="28dp"
-            android:layout_height="88dp"
-            android:background="@drawable/cabo_vermelho_invertido"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.43"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="471dp" />
-
-        <ImageView
-            android:layout_width="28dp"
-            android:layout_height="88dp"
-            android:background="@drawable/cabo_preto_invertido"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.535"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="471dp" />
-
-        <ImageView
-            android:layout_width="27dp"
-            android:layout_height="93dp"
-            android:background="@drawable/cabo_vermelho_invertido"
-
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="655dp" />
-
-        <ImageView
-            android:layout_width="27dp"
+            android:id="@+id/imageView2"
+            android:layout_width="9dp"
             android:layout_height="100dp"
-            android:background="@drawable/cabo_preto_invertido"
+            android:background="@drawable/cabo_vermelho"
+            app:layout_constraintBottom_toTopOf="@+id/imageView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-            tools:layout_editor_absoluteX="217dp"
-            tools:layout_editor_absoluteY="648dp" />
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="9dp"
+            android:layout_height="100dp"
+
+            android:background="@drawable/cabo_preto"
+            app:layout_constraintBottom_toTopOf="@+id/imageView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="79dp"
-            android:layout_height="98dp"
+            android:layout_height="90dp"
+
+            android:layout_marginTop="100dp"
             android:background="@drawable/inversor_solar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="559dp" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
             android:id="@+id/imageView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
             android:background="@drawable/controlador_carga"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="356dp" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView9"
+            tools:ignore="MissingConstraints" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="84dp"
-            android:layout_height="77dp"
-            android:layout_marginBottom="76dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="92dp"
             android:background="@drawable/bateria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.97"
 
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="28dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="96dp"
-            tools:layout_editor_absoluteY="257dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="28dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="205dp"
-            tools:layout_editor_absoluteY="314dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="28dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="205dp"
-            tools:layout_editor_absoluteY="259dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="28dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="96dp"
-            tools:layout_editor_absoluteY="314dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="28dp"
-            android:layout_height="34dp"
-            tools:layout_editor_absoluteX="96dp"
-            tools:layout_editor_absoluteY="257dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

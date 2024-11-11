@@ -1,5 +1,6 @@
 package com.example.circuitoseltricos.fragmentos;
 
+import android.animation.ObjectAnimator;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.graphics.fonts.Font;
@@ -12,10 +13,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Switch;
 
 import com.example.circuitoseltricos.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,12 +72,35 @@ public class HomeFragment extends Fragment {
 
     }
 
+    private ImageView lightView;
+    private FloatingActionButton floatingActionButton;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        // Vincula o lightView usando findViewById
+        lightView = view.findViewById(R.id.lightView);
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                lightView.setVisibility(View.VISIBLE);
+
+                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
+                fadeIn.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
+
+                // Iniciar animação
+                fadeIn.start();
+            }
+        });
 
 
+
+        return view;
     }
 }
