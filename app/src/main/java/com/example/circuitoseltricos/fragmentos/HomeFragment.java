@@ -37,6 +37,9 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Switch modoNoturno;
+    private ImageView lightView;
+    private ImageView lightView2;
+    private FloatingActionButton floatingActionButton;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -71,8 +74,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private ImageView lightView;
-    private FloatingActionButton floatingActionButton;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -81,6 +83,7 @@ public class HomeFragment extends Fragment {
 
         // Vincula o lightView usando findViewById
         lightView = view.findViewById(R.id.lightView);
+        lightView2 = view.findViewById(R.id.lightView2);
         floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -88,11 +91,15 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
 
                 lightView.setVisibility(View.VISIBLE);
+                lightView2.setVisibility(View.VISIBLE);
 
-                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
-                fadeIn.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
+                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView2, "alpha", 0.1f, 1.0f);
+                fadeIn.setDuration(8000); // Duração de 2 segundos para aumentar o brilho
 
-                // Iniciar animação
+                ObjectAnimator fadeIn2 = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
+                fadeIn2.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
+
+                fadeIn2.start();
                 fadeIn.start();
             }
         });

@@ -15,19 +15,20 @@
             android:id="@+id/lightView"
             android:layout_width="307dp"
             android:layout_height="291dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
+            android:alpha="0.2"
             android:background="@android:color/transparent"
+            android:elevation="1dp"
             android:src="@drawable/light_circle"
             android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@id/placa_solar"
-            app:layout_constraintEnd_toEndOf="@id/placa_solar"
-            app:layout_constraintStart_toStartOf="@id/placa_solar"
-            app:layout_constraintTop_toTopOf="@id/placa_solar" />
-        />
+            app:layout_constraintBottom_toBottomOf="@id/placaSolar"
+            app:layout_constraintEnd_toEndOf="@id/placaSolar"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@id/placaSolar"
+            app:layout_constraintTop_toTopOf="@id/placaSolar"
+            app:layout_constraintVertical_bias="0.936" />
 
         <ImageView
-            android:id="@+id/placa_solar"
+            android:id="@+id/placaSolar"
             android:layout_width="250dp"
             android:layout_height="150dp"
             android:layout_marginTop="32dp"
@@ -38,90 +39,112 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/caboPreto1"
             android:layout_width="12dp"
             android:layout_height="109dp"
             android:background="@drawable/cabo_preto"
-            app:layout_constraintBottom_toTopOf="@+id/imageView10"
+            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.601"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/placa_solar" />
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/caboVermelho2"
             android:layout_width="9dp"
             android:layout_height="107dp"
             android:background="@drawable/cabo_vermelho"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/bateria"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.435"
+            app:layout_constraintHorizontal_bias="0.423"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10"
-            app:layout_constraintVertical_bias="0.533" />
+            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga"
+            app:layout_constraintVertical_bias="0.466" />
 
         <ImageView
-            android:id="@+id/imageView12"
+            android:id="@+id/caboVermelho1"
             android:layout_width="9dp"
             android:layout_height="109dp"
             android:background="@drawable/cabo_vermelho"
-            app:layout_constraintBottom_toTopOf="@+id/imageView10"
+            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.385"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/placa_solar"
+            app:layout_constraintTop_toBottomOf="@id/placaSolar"
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/caboPreto2"
             android:layout_width="9dp"
             android:layout_height="107dp"
             android:layout_marginTop="3dp"
             android:background="@drawable/cabo_preto"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toTopOf="@+id/bateria"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintHorizontal_bias="0.574"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga"
             app:layout_constraintVertical_bias="0.611" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/caboVermelho3"
             android:layout_width="9dp"
             android:layout_height="100dp"
             android:background="@drawable/cabo_vermelho"
-            app:layout_constraintBottom_toTopOf="@+id/imageView7"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/bateria" />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/caboPreto3"
             android:layout_width="9dp"
             android:layout_height="100dp"
 
             android:background="@drawable/cabo_preto"
-            app:layout_constraintBottom_toTopOf="@+id/imageView7"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.532"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/bateria" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/lampada"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/lightView2"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:elevation="1dp"
+            android:src="@drawable/light_circle_lamp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/Inversor"
             android:layout_width="79dp"
             android:layout_height="90dp"
-
             android:layout_marginTop="100dp"
             android:background="@drawable/inversor_solar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/bateria"
             tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/controladorDeCarga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="108dp"
@@ -129,11 +152,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/placa_solar"
+            app:layout_constraintTop_toBottomOf="@id/placaSolar"
             tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/bateria"
             android:layout_width="84dp"
             android:layout_height="70dp"
             android:layout_marginTop="92dp"
@@ -141,7 +164,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.499"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
@@ -149,11 +172,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="16dp"
+            android:src="@drawable/baseline_lightbulb_circle_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.954"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/baseline_lightbulb_circle_24"
             tools:ignore="SpeakableTextPresentCheck" />
 
 
