@@ -69,15 +69,13 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
     }
 
     private ImageView lightView;
     private FloatingActionButton floatingActionButton;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
@@ -98,8 +96,6 @@ public class HomeFragment extends Fragment {
                 fadeIn.start();
             }
         });
-
-
 
         return view;
     }
