@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:background="#5491DC"
+        android:background="#E2E2E2"
         app:itemIconTint="@color/text_primary"
         app:itemTextColor="@color/text_primary"
         app:layout_constraintBottom_toBottomOf="parent"

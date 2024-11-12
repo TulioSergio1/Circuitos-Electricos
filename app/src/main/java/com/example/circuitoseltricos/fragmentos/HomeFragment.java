@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
                 lightView2.setVisibility(View.VISIBLE);
 
                 ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView2, "alpha", 0.1f, 1.0f);
-                fadeIn.setDuration(8000); // Duração de 2 segundos para aumentar o brilho
+                fadeIn.setDuration(6000); // Duração de 2 segundos para aumentar o brilho
 
                 ObjectAnimator fadeIn2 = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
                 fadeIn2.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
