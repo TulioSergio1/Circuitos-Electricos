@@ -1,24 +1,14 @@
 package com.example.circuitoseltricos.fragmentos;
 
-import android.animation.ObjectAnimator;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.graphics.fonts.Font;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.Switch;
 
 import com.example.circuitoseltricos.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,14 +22,9 @@ public class HomeFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Switch modoNoturno;
-    private ImageView lightView;
-    private ImageView lightView2;
-    private FloatingActionButton floatingActionButton;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -61,7 +46,6 @@ public class HomeFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-
     }
 
     @Override
@@ -71,39 +55,12 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
-
-        // Vincula o lightView usando findViewById
-        lightView = view.findViewById(R.id.lightView);
-        lightView2 = view.findViewById(R.id.lightView2);
-        floatingActionButton = view.findViewById(R.id.floatingActionButton);
-
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                lightView.setVisibility(View.VISIBLE);
-                lightView2.setVisibility(View.VISIBLE);
-
-                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView2, "alpha", 0.1f, 1.0f);
-                fadeIn.setDuration(6000); // Duração de 2 segundos para aumentar o brilho
-
-                ObjectAnimator fadeIn2 = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
-                fadeIn2.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
-
-                fadeIn2.start();
-                fadeIn.start();
-            }
-        });
-
-        return view;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 }

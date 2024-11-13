@@ -1,18 +1,11 @@
 package com.example.circuitoseltricos;
 
 import android.annotation.SuppressLint;
-import android.graphics.Paint;
-import android.graphics.fonts.Font;
-import android.graphics.fonts.FontStyle;
 import android.os.Bundle;
-import android.widget.SeekBar;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
-import androidx.core.provider.FontRequest;
-import androidx.core.provider.FontsContractCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
@@ -20,7 +13,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.circuitoseltricos.databinding.ActivityMainBinding;
-import com.example.circuitoseltricos.fragmentos.HomeFragment;
+import com.example.circuitoseltricos.fragmentos.SistemaEletrico1;
 import com.example.circuitoseltricos.fragmentos.ProfileFragment;
 import com.example.circuitoseltricos.fragmentos.SettingsFragment;
 
@@ -35,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        substituirFragment(new HomeFragment());
+        substituirFragment(new SistemaEletrico1());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -49,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             final int settingsId = R.id.settings;
 
             if (menuItem.getItemId() == homeId) {
-                substituirFragment(new HomeFragment());
+                substituirFragment(new SistemaEletrico1());
             }
             if(menuItem.getItemId() == profileId){
                 substituirFragment(new ProfileFragment());

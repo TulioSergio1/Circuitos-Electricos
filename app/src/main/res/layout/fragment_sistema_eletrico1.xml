@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".fragmentos.SistemaEletrico1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/lightView"
+            android:layout_width="307dp"
+            android:layout_height="291dp"
+            android:background="@android:color/transparent"
+            android:elevation="1dp"
+            android:src="@drawable/light_circle"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/placaSolar"
+            app:layout_constraintEnd_toEndOf="@id/placaSolar"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@id/placaSolar"
+            app:layout_constraintTop_toTopOf="@id/placaSolar"
+            app:layout_constraintVertical_bias="0.936" />
+
+        <ImageView
+            android:id="@+id/placaSolar"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/placa_solar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/caboPreto1"
+            android:layout_width="12dp"
+            android:layout_height="109dp"
+            android:background="@drawable/cabo_preto"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.601"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar" />
+
+        <ImageView
+            android:id="@+id/caboVermelho2"
+            android:layout_width="9dp"
+            android:layout_height="107dp"
+            android:background="@drawable/cabo_vermelho"
+            app:layout_constraintBottom_toTopOf="@+id/bateria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga"
+            app:layout_constraintVertical_bias="0.466" />
+
+        <ImageView
+            android:id="@+id/caboVermelho1"
+            android:layout_width="9dp"
+            android:layout_height="109dp"
+            android:background="@drawable/cabo_vermelho"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/placaSolar"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/caboPreto2"
+            android:layout_width="9dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/cabo_preto"
+            app:layout_constraintBottom_toTopOf="@+id/bateria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.574"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga"
+            app:layout_constraintVertical_bias="0.611" />
+
+        <ImageView
+            android:id="@+id/caboVermelho3"
+            android:layout_width="9dp"
+            android:layout_height="100dp"
+            android:background="@drawable/cabo_vermelho"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bateria" />
+
+        <ImageView
+            android:id="@+id/caboPreto3"
+            android:layout_width="9dp"
+            android:layout_height="100dp"
+
+            android:background="@drawable/cabo_preto"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.532"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bateria" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/lampada"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/lightView2"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:elevation="1dp"
+            android:src="@drawable/light_circle_lamp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.035"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/Inversor"
+            android:layout_width="79dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/inversor_solar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bateria"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/controladorDeCarga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="108dp"
+            android:background="@drawable/controlador_carga"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/placaSolar"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/bateria"
+            android:layout_width="84dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="92dp"
+            android:background="@drawable/bateria"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/baseline_lightbulb_circle_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.954"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="129dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toOf="@+id/caboVermelho1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cadastroActivity">
+    tools:context=".CadastroActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -89,6 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cadastrarButton"
         android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginBottom="16dp"
