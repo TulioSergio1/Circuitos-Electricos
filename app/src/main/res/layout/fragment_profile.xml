@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,12 +12,16 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="309dp"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="646dp"
             android:background="@drawable/background_edit_text"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="53dp"
-            tools:layout_editor_absoluteY="95dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/textView7"
@@ -46,8 +51,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textView10"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginBottom="61dp"
                 android:text="Curso:"
                 android:textSize="16sp" />
 
@@ -58,11 +65,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="45dp"
             android:text="Perfil do aluno"
             android:textSize="34sp"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="11dp"
-            tools:layout_editor_absoluteY="5dp" />
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
