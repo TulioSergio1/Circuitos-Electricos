@@ -11,97 +11,81 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
+        android:fontFamily="@font/barlow_semibold"
         android:text="Cadastro de alunos"
         android:textColor="@color/text_primary"
         android:textSize="32sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="345dp"
+        android:layout_height="56dp"
+        android:background="@drawable/background_edit_text"
+        android:paddingLeft="10dp"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="181dp" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:fontFamily="@font/barlow_semibold"
         android:text="Nome:"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="154dp" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="345dp"
         android:layout_height="56dp"
-        android:layout_marginTop="12dp"
         android:background="@drawable/background_edit_text"
         android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="370dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:fontFamily="@font/barlow_semibold"
         android:text="Período:"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="343dp" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <Spinner
         android:layout_width="345dp"
         android:layout_height="56dp"
-        android:layout_marginTop="12dp"
         android:background="@drawable/background_edit_text"
-        android:paddingLeft="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="607dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
+        android:fontFamily="@font/barlow_semibold"
         android:text="Curso:"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <Spinner
-        android:layout_width="345dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/background_edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="580dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cadastrarButton"
         android:layout_width="wrap_content"
-        android:layout_height="38dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="40dp"
         android:background="@drawable/shape_button"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/barlow_semibold"
         android:padding="10dp"
         android:text="Cadastrar"
         android:textAllCaps="false"
-        android:textColor="#E0E0E0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="307dp"
+        tools:layout_editor_absoluteY="810dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
