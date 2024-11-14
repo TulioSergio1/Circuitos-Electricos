@@ -1,14 +1,18 @@
 package com.example.circuitoseltricos.fragmentos;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -38,13 +42,13 @@ public class SistemaEletrico1 extends Fragment {
     private ImageView lightView;
     private ImageView lightView2;
     private FloatingActionButton floatingActionButton;
-    private RadioGroup radioGroup1;
     private RadioButton radioButton1;
     private RadioButton radioButton2;
     private RadioButton radioButton3;
     private RadioButton radioButton4;
     private ImageView caboVermelho1;
     private ImageView caboPreto1;
+    private boolean isDialogShowing = false;
 
     public SistemaEletrico1() {
         // Required empty public constructor
@@ -81,6 +85,7 @@ public class SistemaEletrico1 extends Fragment {
 
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -100,19 +105,122 @@ public class SistemaEletrico1 extends Fragment {
         // Variável para controlar o estado de ambos os RadioButtons
         final boolean[] isChecked1 = {false};
         final boolean[] isChecked2 = {false};
+        final boolean[] isChecked3 = {false};
+        final boolean[] isChecked4 = {false};
 
         radioButton1.setOnClickListener(v -> {
+            if (isDialogShowing) return; // Se o Dialog está visível, evita outra interação
+
             isChecked1[0] = !isChecked1[0]; // Alterna o estado
 
             if (isChecked1[0]) {
-                // Marca o botão se estiver ativado
                 radioButton1.setChecked(true);
-                radioButton2.setChecked(true);
+                if (radioButton1.isChecked() && radioButton2.isChecked()){
+                    caboVermelho1.setVisibility(View.VISIBLE);
+                } else if (radioButton1.isChecked() && radioButton3.isChecked() || radioButton4.isChecked()) {
+                    // Exibe o Dialog e desmarca os RadioButtons
+                    radioButton1.setChecked(false);
+                    radioButton3.setChecked(false);
+                    radioButton4.setChecked(false);
+                    isChecked1[0] = false;
+                    isChecked3[0] = false;
+                    isChecked4[0] = false;
+                    mostrarDialog();
+                }
             } else {
                 radioButton1.setChecked(false);
-                radioButton2.setChecked(false);
+                caboVermelho1.setVisibility(View.INVISIBLE);
             }
+        });
 
+        radioButton2.setOnClickListener(v -> {
+            if (isDialogShowing) return;
+
+            isChecked2[0] = !isChecked2[0];
+
+            if (isChecked2[0]) {
+                radioButton2.setChecked(true);
+                if (radioButton1.isChecked() && radioButton2.isChecked()){
+                    caboVermelho1.setVisibility(View.VISIBLE);
+                } else if (radioButton2.isChecked() && radioButton3.isChecked() || radioButton4.isChecked() ) {
+                    radioButton2.setChecked(false);
+                    radioButton4.setChecked(false);
+                    radioButton3.setChecked(false);
+                    isChecked2[0] = false;
+                    isChecked3[0] = false;
+                    isChecked4[0] = false;
+                    mostrarDialog();
+                }
+            } else {
+                radioButton2.setChecked(false);
+                caboVermelho1.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        radioButton3.setOnClickListener(v -> {
+            if (isDialogShowing) return; // Se o Dialog está visível, evita outra interação
+
+            isChecked3[0] = !isChecked3[0];
+
+            if (isChecked3[0]) {
+                radioButton3.setChecked(true);
+
+                if (radioButton3.isChecked() && radioButton4.isChecked()){
+                    caboPreto1.setVisibility(View.VISIBLE);
+                } else if (radioButton1.isChecked() && radioButton3.isChecked() || radioButton4.isChecked()) {
+                    // Exibe o Dialog e desmarca os RadioButtons
+                    radioButton1.setChecked(false);
+                    radioButton3.setChecked(false);
+                    isChecked1[0] = false;
+                    isChecked3[0] = false;
+                    mostrarDialog();
+                } else if (radioButton2.isChecked() && radioButton3.isChecked() || radioButton4.isChecked() ) {
+                    radioButton2.setChecked(false);
+                    radioButton4.setChecked(false);
+                    radioButton3.setChecked(false);
+                    isChecked2[0] = false;
+                    isChecked3[0] = false;
+                    isChecked4[0] = false;
+                    mostrarDialog();
+                }
+            } else {
+                radioButton3.setChecked(false);
+                caboPreto1.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        radioButton4.setOnClickListener(v -> {
+            if (isDialogShowing) return;
+
+            isChecked4[0] = !isChecked4[0];
+
+            if (isChecked4[0]) {
+                radioButton4.setChecked(true);
+                if (radioButton3.isChecked() && radioButton4.isChecked()){
+                    caboPreto1.setVisibility(View.VISIBLE);
+                } else if (radioButton1.isChecked() && radioButton4.isChecked() || radioButton3.isChecked()) {
+                    // Exibe o Dialog e desmarca os RadioButtons
+                    radioButton1.setChecked(false);
+                    radioButton3.setChecked(false);
+                    radioButton4.setChecked(false);
+                    isChecked1[0] = false;
+                    isChecked3[0] = false;
+                    isChecked4[0] = false;
+                    mostrarDialog();
+
+                } else if (radioButton2.isChecked() && radioButton4.isChecked() || radioButton3.isChecked()) {
+                    radioButton2.setChecked(false);
+                    radioButton4.setChecked(false);
+                    radioButton3.setChecked(false);
+                    isChecked2[0] = false;
+                    isChecked3[0] = false;
+                    isChecked4[0] = false;
+                    mostrarDialog();
+                }
+            } else {
+                radioButton4.setChecked(false);
+                caboPreto1.setVisibility(View.INVISIBLE);
+            }
         });
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +231,7 @@ public class SistemaEletrico1 extends Fragment {
                 lightView2.setVisibility(View.VISIBLE);
 
                 ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView2, "alpha", 0.1f, 1.0f);
-                fadeIn.setDuration(6000); // Duração de 2 segundos para aumentar o brilho
+                fadeIn.setDuration(6000); // Duração de 6 segundos para aumentar o brilho
 
                 ObjectAnimator fadeIn2 = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
                 fadeIn2.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
@@ -133,8 +241,16 @@ public class SistemaEletrico1 extends Fragment {
             }
         });
 
-
-
         return view;
+    }
+
+    public void mostrarDialog(){
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.layout_custom_dialog);
+        dialog.show();
+        ImageButton fecharIcon = dialog.findViewById(R.id.fecharIcon);
+        fecharIcon.setOnClickListener(v -> {
+            dialog.dismiss();
+        });
     }
 }
