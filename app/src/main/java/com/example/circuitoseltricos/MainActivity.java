@@ -2,6 +2,8 @@ package com.example.circuitoseltricos;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.circuitoseltricos.databinding.ActivityMainBinding;
+import com.example.circuitoseltricos.fragmentos.HomeFragment;
 import com.example.circuitoseltricos.fragmentos.SistemaEletrico1;
 import com.example.circuitoseltricos.fragmentos.ProfileFragment;
 import com.example.circuitoseltricos.fragmentos.SettingsFragment;
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        substituirFragment(new SistemaEletrico1());
+        substituirFragment(new HomeFragment());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, 0, systemBars.right, 0);
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             final int settingsId = R.id.settings;
 
             if (menuItem.getItemId() == homeId) {
-                substituirFragment(new SistemaEletrico1());
+                substituirFragment(new HomeFragment());
             }
             if(menuItem.getItemId() == profileId){
                 substituirFragment(new ProfileFragment());

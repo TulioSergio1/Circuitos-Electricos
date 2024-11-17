@@ -11,20 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/lightView"
-            android:layout_width="307dp"
-            android:layout_height="291dp"
-            android:background="@android:color/transparent"
-            android:elevation="1dp"
-            android:src="@drawable/light_circle"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@id/placaSolar"
-            app:layout_constraintEnd_toEndOf="@id/placaSolar"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="@id/placaSolar"
-            app:layout_constraintTop_toTopOf="@id/placaSolar"
-            app:layout_constraintVertical_bias="0.936" />
 
         <ImageView
             android:id="@+id/placaSolar"
@@ -39,27 +25,16 @@
 
         <ImageView
             android:id="@+id/caboPreto1"
-            android:layout_width="12dp"
+            android:layout_width="9dp"
             android:layout_height="109dp"
             android:background="@drawable/cabo_preto"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.601"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/placaSolar" />
 
-        <ImageView
-            android:id="@+id/caboVermelho2"
-            android:layout_width="9dp"
-            android:layout_height="107dp"
-            android:background="@drawable/cabo_vermelho"
-            app:layout_constraintBottom_toTopOf="@+id/bateria"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.423"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga"
-            app:layout_constraintVertical_bias="0.466" />
 
         <ImageView
             android:id="@+id/caboVermelho1"
@@ -67,48 +42,13 @@
             android:layout_height="109dp"
             android:background="@drawable/cabo_vermelho"
             android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.385"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/placaSolar"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/caboPreto2"
-            android:layout_width="9dp"
-            android:layout_height="107dp"
-            android:layout_marginTop="3dp"
-            android:background="@drawable/cabo_preto"
-            app:layout_constraintBottom_toTopOf="@+id/bateria"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.574"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga"
-            app:layout_constraintVertical_bias="0.611" />
-
-        <ImageView
-            android:id="@+id/caboVermelho3"
-            android:layout_width="9dp"
-            android:layout_height="100dp"
-            android:background="@drawable/cabo_vermelho"
-            app:layout_constraintBottom_toTopOf="@+id/Inversor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.461"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bateria" />
-
-        <ImageView
-            android:id="@+id/caboPreto3"
-            android:layout_width="9dp"
-            android:layout_height="100dp"
-
-            android:background="@drawable/cabo_preto"
-            app:layout_constraintBottom_toTopOf="@+id/Inversor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.532"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bateria" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -135,39 +75,18 @@
             app:layout_constraintHorizontal_bias="0.035"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/Inversor"
-            android:layout_width="79dp"
-            android:layout_height="90dp"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/inversor_solar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bateria"
-            tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/controladorDeCarga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/Inversor"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
             android:layout_marginTop="108dp"
-            android:background="@drawable/controlador_carga"
+            android:background="@drawable/inversor_solar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/placaSolar"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar"
             tools:ignore="MissingConstraints" />
-
-        <ImageView
-            android:id="@+id/bateria"
-            android:layout_width="84dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="92dp"
-            android:background="@drawable/bateria"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/controladorDeCarga" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
@@ -175,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/baseline_lightbulb_circle_24"
+            android:src="@drawable/baseline_turn_on_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.954"
@@ -197,7 +116,7 @@
             android:layout_height="30dp"
             android:layout_marginStart="108dp"
             android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
             app:layout_constraintStart_toStartOf="parent" />
 
         <RadioButton
@@ -215,8 +134,109 @@
             android:layout_height="30dp"
             android:layout_marginEnd="116dp"
             android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/controladorDeCarga"
+            app:layout_constraintBottom_toTopOf="@+id/Inversor"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Radiação Solar Incidente
+            (Santa Luzia-PB)"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="400dp"
+            android:layout_height="230dp"
+            android:layout_marginBottom="64dp"
+            android:src="@drawable/inversor_display"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonDadosMax"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:text="Max"
+            android:background="@drawable/shape_button"
+            android:textAllCaps="false"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonDadosMin"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:text="Min"
+            android:background="@drawable/shape_button"
+            android:textAllCaps="false"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/dados"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text="Serão mostrados aqui os dados referentes ao mês de novembro (máx.) e junho (min.)"
+            android:fontFamily="@font/barlow_semibold"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.381"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.477" />
+
+        <TextView
+            android:id="@+id/dadosMax"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Novembro é o período com maior irradiação solar durante o ano: 6,60 kWh/m².dia"
+            android:fontFamily="@font/barlow_semibold"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.381"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.477" />
+
+
+
+        <TextView
+            android:id="@+id/dadoMin"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Junho é o período com menor irradiação solar durante o ano: 4,66 kWh/m².dia"
+            android:fontFamily="@font/barlow_semibold"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.381"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.477" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

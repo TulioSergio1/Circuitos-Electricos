@@ -11,12 +11,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.circuitoseltricos.R;
@@ -40,7 +42,6 @@ public class SistemaEletrico1 extends Fragment {
     private String mParam2;
     private Switch modoNoturno;
     private ImageView lightView;
-    private ImageView lightView2;
     private FloatingActionButton floatingActionButton;
     private RadioButton radioButton1;
     private RadioButton radioButton2;
@@ -48,12 +49,15 @@ public class SistemaEletrico1 extends Fragment {
     private RadioButton radioButton4;
     private ImageView caboVermelho1;
     private ImageView caboPreto1;
+    private TextView dadosTextView;
+    private TextView dadosMin;
+    private TextView dadosMax;
+    private Button buttonDadosMax;
+    private Button buttonDadosMin;
 
     private boolean isDialogShowing = false;
     private boolean isCombination1Correct = false;
     private boolean isCombination2Correct = false;
-    private boolean isCombination3Correct = false;
-    private boolean isCombination4Correct = false;
 
 
     public SistemaEletrico1() {
@@ -96,8 +100,7 @@ public class SistemaEletrico1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_sistema_eletrico1, container, false);
 
-        lightView = view.findViewById(R.id.lightView);
-        lightView2 = view.findViewById(R.id.lightView2);
+        lightView = view.findViewById(R.id.lightView2);
         floatingActionButton = view.findViewById(R.id.floatingActionButton);
         radioButton1 = view.findViewById(R.id.radioButton1);
         radioButton2 = view.findViewById(R.id.radioButton2);
@@ -105,101 +108,109 @@ public class SistemaEletrico1 extends Fragment {
         radioButton4 = view.findViewById(R.id.radioButton4);
         caboVermelho1 = view.findViewById(R.id.caboVermelho1);
         caboPreto1 = view.findViewById(R.id.caboPreto1);
+        dadosTextView = view.findViewById(R.id.dados);
+        dadosMax = view.findViewById(R.id.dadosMax);
+        dadosMin = view.findViewById(R.id.dadoMin);
+        buttonDadosMax = view.findViewById(R.id.buttonDadosMax);
+        buttonDadosMin = view.findViewById(R.id.buttonDadosMin);
+
 
         // RadioButton1 - Combinação com RadioButton2 (cabo vermelho)
         radioButton1.setOnClickListener(v -> {
-            if (isDialogShowing) return;
+            if (radioButton1.isChecked()) {
+                verificarCombinacoes();
+            } });
 
-            if (isCombination1Correct) {
-                // Se já estiver correta, permite desmarcar a combinação
-                isCombination1Correct = false;
-                caboVermelho1.setVisibility(View.INVISIBLE);
-                radioButton1.setChecked(false);
-                radioButton2.setChecked(false);
-            } else if (radioButton1.isChecked() && radioButton2.isChecked()) {
-                isCombination1Correct = true;
-                caboVermelho1.setVisibility(View.VISIBLE);
-            } else {
-                // Verifica se a combinação é inválida
-                verificarCombinacaoInvalida();
-            }
-        });
-
-        // RadioButton2 - Combinação com RadioButton1 (cabo vermelho)
         radioButton2.setOnClickListener(v -> {
-            if (isDialogShowing) return;
+            if (radioButton2.isChecked()) {
+                verificarCombinacoes();
+            } });
 
-            if (isCombination1Correct) {
-                // Se já estiver correta, permite desmarcar a combinação
-                isCombination1Correct = false;
-                caboVermelho1.setVisibility(View.INVISIBLE);
-                radioButton1.setChecked(false);
-                radioButton2.setChecked(false);
-            } else if (radioButton1.isChecked() && radioButton2.isChecked()) {
-                isCombination1Correct = true;
-                caboVermelho1.setVisibility(View.VISIBLE);
-            } else {
-                // Verifica se a combinação é inválida
-                verificarCombinacaoInvalida();
-            }
-        });
-
-        // RadioButton3 - Combinação com RadioButton4 (cabo preto)
         radioButton3.setOnClickListener(v -> {
-            if (isDialogShowing) return;
-
-            if (isCombination3Correct) {
-                // Se já estiver correta, permite desmarcar a combinação
-                isCombination3Correct = false;
-                caboPreto1.setVisibility(View.INVISIBLE);
-                radioButton3.setChecked(false);
-                radioButton4.setChecked(false);
-            } else if (radioButton3.isChecked() && radioButton4.isChecked()) {
-                isCombination3Correct = true;
-                caboPreto1.setVisibility(View.VISIBLE);
-            } else {
-                // Verifica se a combinação é inválida
-                verificarCombinacaoInvalida();
-            }
-        });
-
-        // RadioButton4 - Combinação com RadioButton3 (cabo preto)
+            if (radioButton3.isChecked()) {
+                verificarCombinacoes();
+            } });
         radioButton4.setOnClickListener(v -> {
-            if (isDialogShowing) return;
-
-            if (isCombination3Correct) {
-                // Se já estiver correta, permite desmarcar a combinação
-                isCombination3Correct = false;
-                caboPreto1.setVisibility(View.INVISIBLE);
-                radioButton3.setChecked(false);
-                radioButton4.setChecked(false);
-            } else if (radioButton3.isChecked() && radioButton4.isChecked()) {
-                isCombination3Correct = true;
-                caboPreto1.setVisibility(View.VISIBLE);
-            } else {
-                // Verifica se a combinação é inválida
-                verificarCombinacaoInvalida();
-            }
-        });
+            if (radioButton4.isChecked()) {
+                verificarCombinacoes();
+            } });
 
         floatingActionButton.setOnClickListener(view1 -> {
-            lightView.setVisibility(View.VISIBLE);
-            lightView2.setVisibility(View.VISIBLE);
 
-            ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView2, "alpha", 0.1f, 1.0f);
-            fadeIn.setDuration(6000); // Duração de 6 segundos para aumentar o brilho
+            if ((caboVermelho1.getVisibility() == View.VISIBLE) && (caboPreto1.getVisibility() == View.VISIBLE)){
+                lightView.setVisibility(View.VISIBLE);
 
-            ObjectAnimator fadeIn2 = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
-            fadeIn2.setDuration(2000); // Duração de 2 segundos para aumentar o brilho
+                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
+                fadeIn.setDuration(4000); // Duração de 6 segundos para aumentar o brilho
 
-            fadeIn2.start();
-            fadeIn.start();
+                fadeIn.start();
+
+                dadosTextView.setVisibility(View.VISIBLE);
+
+                ObjectAnimator fadeInTextView = ObjectAnimator.ofFloat(dadosTextView, "alpha", 0.1f, 1.0f);
+                fadeInTextView.setDuration(4000); // Duração de 6 segundos para aumentar o brilho
+
+                fadeInTextView.start();
+            }
+        });
+
+        buttonDadosMax.setOnClickListener(view1 -> {
+
+            if (lightView.getVisibility() == View.VISIBLE){
+                dadosMax.setVisibility(View.VISIBLE);
+                dadosTextView.setVisibility(View.INVISIBLE);
+                dadosMin.setVisibility(View.INVISIBLE);
+            }
+
+        });
+
+        buttonDadosMin.setOnClickListener(view1 -> {
+            if (lightView.getVisibility() == View.VISIBLE){
+                dadosMax.setVisibility(View.INVISIBLE);
+                dadosTextView.setVisibility(View.INVISIBLE);
+                dadosMin.setVisibility(View.VISIBLE);
+            }
         });
 
         return view;
     }
 
-    public void mostrarDialog() {
+    private void verificarCombinacoes() {
+        // Verificar combinações quando nenhuma combinação correta foi feita ainda
+        boolean combinacao1 = radioButton1.isChecked() && radioButton2.isChecked();
+        boolean combinacao2 = radioButton3.isChecked() && radioButton4.isChecked();
+        boolean combinacaoInvalida = !combinacao1 && !combinacao2 &&
+                ((radioButton1.isChecked() && radioButton3.isChecked()) || (radioButton1.isChecked() && radioButton4.isChecked()) ||
+                        (radioButton2.isChecked() && radioButton3.isChecked()) || (radioButton2.isChecked() && radioButton4.isChecked()));
+
+        if (combinacao1) {
+            isCombination1Correct = true;
+            caboVermelho1.setVisibility(View.VISIBLE);
+        }
+
+        if (combinacao2) {
+            isCombination2Correct = true;
+            caboPreto1.setVisibility(View.VISIBLE);
+        }
+
+        if (combinacaoInvalida) {
+            mostrarDialog();
+            desmarcarRadioButtonsInvalidas();
+        }
+    }
+
+    private void desmarcarRadioButtonsInvalidas() {
+        if (!isCombination1Correct) {
+            radioButton1.setChecked(false);
+            radioButton2.setChecked(false);
+        }
+        if (!isCombination2Correct) {
+            radioButton3.setChecked(false);
+            radioButton4.setChecked(false);
+        }
+    }
+
+    private void mostrarDialog() {
         Dialog dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.layout_custom_dialog);
         dialog.show();
@@ -211,30 +222,5 @@ public class SistemaEletrico1 extends Fragment {
             dialog.dismiss();
             isDialogShowing = false;
         });
-    }
-
-    // Função para verificar se a combinação é inválida
-    public void verificarCombinacaoInvalida() {
-            if ((radioButton1.isChecked() && radioButton3.isChecked()) ||
-                (radioButton1.isChecked() && radioButton4.isChecked()) ||
-                (radioButton2.isChecked() && radioButton3.isChecked()) ||
-                (radioButton2.isChecked() && radioButton4.isChecked())) {
-                // Exibe erro se a combinação for inválida
-                mostrarDialog();
-
-                // Desmarcar os radioButtons envolvidos na combinação inválida
-                if (radioButton1.isChecked()) radioButton1.setChecked(false);
-                if (radioButton2.isChecked()) radioButton2.setChecked(false);
-                if (radioButton3.isChecked()) radioButton3.setChecked(false);
-                if (radioButton4.isChecked()) radioButton4.setChecked(false);
-
-                // Resetar as variáveis de controle
-                isCombination1Correct = false;
-                caboVermelho1.setVisibility(View.INVISIBLE);
-                isCombination3Correct = false;
-                caboPreto1.setVisibility(View.INVISIBLE);
-
-        }
-
     }
 }
