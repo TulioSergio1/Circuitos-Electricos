@@ -30,6 +30,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     private Button buttonPlacaSolar;
+    private Button buttonPlacaEmSerie;
 
 
     public HomeFragment() {
@@ -70,6 +71,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         buttonPlacaSolar = view.findViewById(R.id.buttonPlacaSolar);
+        buttonPlacaEmSerie = view.findViewById(R.id.buttonPlacaSerie);
 
         // Configurar o clique do botão
         buttonPlacaSolar.setOnClickListener(v -> {
@@ -80,6 +82,16 @@ public class HomeFragment extends Fragment {
             fragmentTransaction.addToBackStack(null); // Permite voltar para o fragmento anterior
             fragmentTransaction.commit();
         });
+
+        buttonPlacaEmSerie.setOnClickListener(v -> {
+            // Substituir o fragmento atual por outro fragmento (SistemaEletrico1)
+            FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.frame_layout, new SistemaEletrico2());
+            fragmentTransaction.addToBackStack(null); // Permite voltar para o fragmento anterior
+            fragmentTransaction.commit();
+        });
+
 
         return  view;
 

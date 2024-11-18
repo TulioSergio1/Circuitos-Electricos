@@ -3,24 +3,22 @@ package com.example.circuitoseltricos.fragmentos;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.circuitoseltricos.MainActivity;
 import com.example.circuitoseltricos.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -41,7 +39,6 @@ public class SistemaEletrico1 extends Fragment {
     private String mParam1;
     private String mParam2;
     private Switch modoNoturno;
-    private ImageView lightView;
     private FloatingActionButton floatingActionButton;
     private RadioButton radioButton1;
     private RadioButton radioButton2;
@@ -49,11 +46,17 @@ public class SistemaEletrico1 extends Fragment {
     private RadioButton radioButton4;
     private ImageView caboVermelho1;
     private ImageView caboPreto1;
+    private ImageView lightView;
     private TextView dadosTextView;
     private TextView dadosMin;
     private TextView dadosMax;
+    private TextView solarVoltsText;
+    private TextView caboCorrenteText;
+    private TextView inversorVoltsText;
     private Button buttonDadosMax;
     private Button buttonDadosMin;
+    private ImageButton buttonVoltar;
+    private ImageButton infoDialog;
 
     private boolean isDialogShowing = false;
     private boolean isCombination1Correct = false;
@@ -113,6 +116,13 @@ public class SistemaEletrico1 extends Fragment {
         dadosMin = view.findViewById(R.id.dadoMin);
         buttonDadosMax = view.findViewById(R.id.buttonDadosMax);
         buttonDadosMin = view.findViewById(R.id.buttonDadosMin);
+        buttonVoltar = view.findViewById(R.id.buttonVoltar);
+        infoDialog = view.findViewById(R.id.buttonInfo);
+        solarVoltsText = view.findViewById(R.id.solarVoltsText);
+        caboCorrenteText = view.findViewById(R.id.cableCurrentText);
+        inversorVoltsText = view.findViewById(R.id.inverterVoltageText);
+
+
 
 
         // RadioButton1 - Combinação com RadioButton2 (cabo vermelho)
@@ -141,16 +151,24 @@ public class SistemaEletrico1 extends Fragment {
                 lightView.setVisibility(View.VISIBLE);
 
                 ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
-                fadeIn.setDuration(4000); // Duração de 6 segundos para aumentar o brilho
+                fadeIn.setDuration(4000); // Duração de 4 segundos para aumentar o brilho
 
                 fadeIn.start();
 
                 dadosTextView.setVisibility(View.VISIBLE);
 
                 ObjectAnimator fadeInTextView = ObjectAnimator.ofFloat(dadosTextView, "alpha", 0.1f, 1.0f);
-                fadeInTextView.setDuration(4000); // Duração de 6 segundos para aumentar o brilho
+                fadeInTextView.setDuration(1000); // Duração de 1 segundos para ligar
 
                 fadeInTextView.start();
+
+                double solarVolts = 24.5;
+                double currentAmps = 10.2;
+                double convertedVolts = 220.0;
+
+                solarVoltsText.setText("Volts: " + solarVolts + " V");
+                caboCorrenteText.setText("Corrente: " + currentAmps + " A");
+                inversorVoltsText.setText("Volts Convertidos: " + convertedVolts + " V");
             }
         });
 
@@ -170,6 +188,22 @@ public class SistemaEletrico1 extends Fragment {
                 dadosTextView.setVisibility(View.INVISIBLE);
                 dadosMin.setVisibility(View.VISIBLE);
             }
+        });
+
+        buttonVoltar.setOnClickListener(view1 -> {
+            Intent intent = new Intent(view.getContext(), MainActivity.class);
+            startActivity(intent);
+        });
+
+        infoDialog.setOnClickListener(v -> {
+            Dialog dialog = new Dialog(getContext());
+            dialog.setContentView(R.layout.layout_question_dialog);
+            dialog.show();
+            ImageButton fecharIcon = dialog.findViewById(R.id.fecharIcon);
+            fecharIcon.setOnClickListener(view1 -> dialog.dismiss());
+            fecharIcon.setOnClickListener(view1 -> {
+                dialog.dismiss();
+            });
         });
 
         return view;
@@ -212,7 +246,7 @@ public class SistemaEletrico1 extends Fragment {
 
     private void mostrarDialog() {
         Dialog dialog = new Dialog(getContext());
-        dialog.setContentView(R.layout.layout_custom_dialog);
+        dialog.setContentView(R.layout.layout_alert_dialog);
         dialog.show();
         ImageButton fecharIcon = dialog.findViewById(R.id.fecharIcon);
         fecharIcon.setOnClickListener(v -> dialog.dismiss());
