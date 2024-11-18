@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="290dp"
-        android:layout_height="250dp"
+        android:layout_height="290dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,38 +20,39 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-black"
-            android:text="Ligação on grid"
+            android:text="Ligação em Série"
             android:textSize="28sp" />
 
         <ImageButton
             android:id="@+id/fecharIcon"
-            android:layout_width="48dp"
-            android:layout_height="50dp"
+            android:layout_width="26dp"
+            android:layout_height="38dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="200dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="242dp"
             android:layout_toEndOf="@+id/textViewInfo"
             android:layout_toRightOf="@id/textViewInfo"
             android:background="@drawable/baseline_close_24" />
 
         <TextView
-            android:id="@+id/textViewInfoCircuito"
+            android:id="@+id/textViewInfoParalelo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textViewInfo"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="30dp"
             android:layout_marginEnd="50dp"
+            android:layout_marginTop="30dp"
+            android:text="O circuito em série, também conhecido como ligação em série, é um circuito composto por apenas um ponto em comum entre as placas. A tensão pode ser diferente, enquanto a corrente elétrica é a mesma."
             android:fontFamily="sans-serif-medium"
-            android:text="O circuito elétrico solar on grid é composto por uma placa solar e um inversor, onde é gerado energia em volts pela placa e convertido pelo inversor."
+            android:textSize="16sp"
             android:textAlignment="center"
-            android:textSize="16sp" />
+            />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

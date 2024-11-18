@@ -12,11 +12,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageButton
+            android:id="@+id/buttonVoltar"
+            android:layout_width="33dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/buttonInfo"
+            android:layout_width="33dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/baseline_question_mark_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/placaSolar1"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="140dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="90dp"
             android:background="@drawable/placa_solar"
             app:layout_constraintEnd_toStartOf="@id/placaSolar2"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,9 +44,9 @@
 
         <ImageView
             android:id="@+id/placaSolar2"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="140dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="90dp"
             android:background="@drawable/placa_solar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/placaSolar1"
@@ -36,62 +56,144 @@
             android:id="@+id/caboPretoCurvado"
             android:layout_width="65dp"
             android:layout_height="80dp"
+            android:layout_marginTop="-2dp"
             android:layout_marginStart="50dp"
+            android:visibility="invisible"
             android:background="@drawable/cabo_preto_curvado"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/caboVermelhoCurvado"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar1" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar1" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/placaSolar1" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/caboVermelhoCurvado"
             android:layout_width="65dp"
             android:layout_height="80dp"
             android:layout_marginEnd="50dp"
+            android:visibility="invisible"
             android:background="@drawable/cabo_vermelho_curvado_invertido"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/caboPretoCurvado"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar2" />
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="130dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar2" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/placaSolar2" />
 
         <ImageView
             android:id="@+id/conectoresImageView"
             android:layout_width="60dp"
             android:layout_height="20dp"
-
+            android:visibility="invisible"
             android:layout_marginTop="65dp"
             android:background="@drawable/conectores_ligados"
-            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintEnd_toStartOf="@+id/caboVermelhoCurvado"
             app:layout_constraintStart_toEndOf="@+id/caboPretoCurvado"
             app:layout_constraintTop_toBottomOf="@+id/placaSolar2" />
 
         <ImageView
-            android:layout_width="90dp"
-            android:layout_height="120dp"
-            android:background="@drawable/cabo_vermelho_curvado"
+            android:id="@+id/caboVermelhoCurvadoInvertido"
+            android:layout_width="106dp"
+            android:layout_height="127dp"
             android:layout_marginStart="60dp"
+            android:visibility="invisible"
+            android:background="@drawable/cabo_vermelho_curvado"
             app:layout_constraintEnd_toStartOf="@+id/inversorImageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/placaSolar1" />
 
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/caboVermelhoCurvadoInvertido"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar1" />
+
+        <RadioButton
+            android:id="@+id/radioButton10"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/inversorImageView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caboVermelhoCurvadoInvertido" />
+
         <ImageView
-            android:layout_width="90dp"
-            android:layout_height="120dp"
-            android:background="@drawable/cabo_preto_curvado_invertido"
+            android:id="@+id/caboPretoCurvadoInvertido"
+            android:layout_width="110dp"
+            android:layout_height="130dp"
             android:layout_marginEnd="60dp"
+            android:visibility="invisible"
+            android:background="@drawable/cabo_preto_curvado_invertido"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/inversorImageView"
             app:layout_constraintTop_toBottomOf="@+id/placaSolar2" />
 
+        <RadioButton
+            android:id="@+id/radioButton11"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/caboPretoCurvadoInvertido"
+            app:layout_constraintTop_toBottomOf="@+id/placaSolar2" />
+
+        <RadioButton
+            android:id="@+id/radioButton12"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/inversorImageView"
+            app:layout_constraintTop_toBottomOf="@+id/caboPretoCurvadoInvertido" />
+
         <ImageView
             android:id="@+id/inversorImageView"
-            android:layout_width="120dp"
-            android:layout_height="164dp"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/inversor_solar"
-            tools:layout_editor_absoluteX="145dp"
-            tools:layout_editor_absoluteY="416dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conectoresImageView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </FrameLayout>
