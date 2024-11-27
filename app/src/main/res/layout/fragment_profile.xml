@@ -7,15 +7,18 @@
     android:background="@color/background_color"
     tools:context=".fragmentos.ProfileFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/relativeLayout2"
-            android:layout_width="309dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="646dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="51dp"
+            android:layout_marginEnd="51dp"
+            android:layout_marginBottom="677dp"
             android:background="@drawable/background_edit_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +34,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="14dp"
+                android:fontFamily="@font/barlow_semibold"
                 android:text="Nome:"
                 android:textSize="16sp" />
 
@@ -42,6 +46,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/barlow_semibold"
                 android:text="Período:"
                 android:textSize="16sp" />
 
@@ -55,8 +60,39 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="61dp"
+                android:fontFamily="@font/barlow_semibold"
                 android:text="Curso:"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/nomeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="57dp"
+                android:layout_marginTop="17dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/periodoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="42dp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/cursoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="59dp"
+                android:layout_marginTop="69dp"
+                android:text="TextView" />
 
         </RelativeLayout>
 
@@ -65,9 +101,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginStart="11dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="9dp"
+            android:fontFamily="@font/barlow_semibold"
             android:text="Perfil do aluno"
             android:textSize="34sp"
             app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"

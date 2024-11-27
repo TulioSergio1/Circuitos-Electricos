@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opcoes_curso">
+        <item>Energias Renováveis</item>
+        <item>Informática</item>
+    </string-array>
+</resources>

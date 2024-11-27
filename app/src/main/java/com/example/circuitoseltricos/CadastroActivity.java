@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +18,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class CadastroActivity extends AppCompatActivity {
 
     private Button cadastrarButton;
+    private EditText nomeEditText;
+    private EditText periodoEditText;
+    private Spinner cursoSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +34,32 @@ public class CadastroActivity extends AppCompatActivity {
         });
 
         cadastrarButton = findViewById(R.id.cadastrarButton);
+        nomeEditText = findViewById(R.id.nomeEditText);
+        periodoEditText = findViewById(R.id.periodoEditText);
+        cursoSpinner = findViewById(R.id.cursoSpinner);
+
+
+        AppDatabase instance = AppDatabase.getInstance(getApplicationContext());
 
         cadastrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                String nome = nomeEditText.getText().toString().trim();
+                String periodo = periodoEditText.getText().toString().trim();
+                String curso = cursoSpinner.getSelectedItem().toString();
+
+                if (!nome.equals("") && !periodo.equals("")){
+                    Aluno aluno = new Aluno(nome, periodo, curso);
+                    instance.getAlunoDao().inserir(aluno);
+                    nomeEditText.setText("");
+                    periodoEditText.setText("");
+                    Toast.makeText(getApplicationContext(), "Dados salvos!!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("nome", nome);
+                    intent.putExtra("periodo", periodo);
+                    intent.putExtra("curso", curso);
+                    startActivity(intent);
+                }
             }
         });
     }

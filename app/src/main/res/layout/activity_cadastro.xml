@@ -11,20 +11,30 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="115dp"
         android:fontFamily="@font/barlow_semibold"
         android:text="Cadastro de alunos"
         android:textColor="@color/text_primary"
         android:textSize="32sp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="24dp" />
+        app:layout_constraintBottom_toTopOf="@+id/nomeEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="345dp"
-        android:layout_height="56dp"
+        android:id="@+id/nomeEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="133dp"
         android:background="@drawable/background_edit_text"
         android:paddingLeft="10dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintBottom_toTopOf="@+id/periodoEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView2"
@@ -34,16 +44,22 @@
         android:text="Nome:"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="154dp" />
+        app:layout_constraintBottom_toTopOf="@+id/nomeEditText"
+        app:layout_constraintStart_toStartOf="@+id/nomeEditText" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="345dp"
-        android:layout_height="56dp"
+        android:id="@+id/periodoEditText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="181dp"
         android:background="@drawable/background_edit_text"
         android:paddingLeft="10dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="370dp" />
+        app:layout_constraintBottom_toTopOf="@+id/cursoSpinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeEditText" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,31 +69,41 @@
         android:text="Período:"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="343dp" />
+        app:layout_constraintBottom_toTopOf="@+id/periodoEditText"
+        app:layout_constraintStart_toStartOf="@+id/periodoEditText" />
 
     <Spinner
-        android:layout_width="345dp"
-        android:layout_height="56dp"
+        android:id="@+id/cursoSpinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="136dp"
         android:background="@drawable/background_edit_text"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="607dp" />
+        android:entries="@array/opcoes_curso"
+        app:layout_constraintBottom_toTopOf="@+id/cadastrarButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/periodoEditText" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
         android:fontFamily="@font/barlow_semibold"
         android:text="Curso:"
         android:textColor="@color/text_primary"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="580dp" />
+        app:layout_constraintBottom_toTopOf="@+id/cursoSpinner"
+        app:layout_constraintStart_toStartOf="@+id/cursoSpinner" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cadastrarButton"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_width="119dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="41dp"
         android:background="@drawable/shape_button"
         android:fontFamily="@font/barlow_semibold"
         android:padding="10dp"
@@ -85,7 +111,8 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="307dp"
-        tools:layout_editor_absoluteY="810dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cursoSpinner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
