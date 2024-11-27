@@ -9,7 +9,6 @@ public class Aluno {
     @ColumnInfo(name = "id_aluno")
     @PrimaryKey(autoGenerate = true)
     private int idAluno;
-
     @ColumnInfo(name = "nome")
     private String nome;
     @ColumnInfo(name = "periodo")
