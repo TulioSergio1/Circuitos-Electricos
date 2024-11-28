@@ -45,13 +45,54 @@
             android:layout_below="@id/textViewInfo"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="30dp"
-            android:layout_marginEnd="50dp"
+            android:layout_marginEnd="40dp"
             android:fontFamily="sans-serif-medium"
-            android:text="O circuito elétrico solar on grid é composto por uma placa solar e um inversor, onde é gerado energia em volts pela placa e convertido pelo inversor."
-            android:textAlignment="center"
+            android:text="Potência da placa: 570 Wp."
             android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/eficienciaTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewInfoCircuito"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Eficiência individual: 80%"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/irradiacaoJunhoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/eficienciaTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Irradiação Solar em Junho: 6,66 kWh.m²/dia"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/irradiacaoNovembroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/irradiacaoJunhoTextView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="40dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Irradiação Solar em Novembro: 4,66 kWh.m²/dia"
+            android:textSize="16dp" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

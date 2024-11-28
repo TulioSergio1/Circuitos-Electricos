@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CircuitosElétricos"
         tools:targetApi="31">
         <activity
+            android:name=".fragmentos.instalacoesFragment"
+            android:exported="false" />
+        <activity
             android:name=".CadastroActivity"
             android:exported="true" />
         <activity
