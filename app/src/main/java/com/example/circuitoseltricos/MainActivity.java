@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             final int settingsId = R.id.settings;
 
             if (menuItem.getItemId() == homeId) {
-                substituirFragment(new HomeFragment());
+                substituirFragment(new SistemaEletrico());
             }
             if(menuItem.getItemId() == profileId){
                 substituirFragment(new ProfileFragment());

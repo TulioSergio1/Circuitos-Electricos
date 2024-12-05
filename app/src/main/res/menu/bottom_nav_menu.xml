@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item android:title="Circuito"
         android:id="@+id/home"
-        android:icon="@drawable/baseline_home_24" />
-    <item android:title="Profile"
+        android:icon="@drawable/baseline_lightbulb_circle_24" />
+    <item android:title="Perfil"
         android:id="@+id/profile"
         android:icon="@drawable/baseline_person_outline_24" />
-    <item android:title="settings"
+    <item android:title="Sobre"
         android:id="@+id/settings"
-        android:icon="@drawable/baseline_settings_24" />
+        android:icon="@drawable/baseline_question_mark_24" />
 </menu>

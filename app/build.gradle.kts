@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.circuitoseltricos"
-        minSdk = 31
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -35,6 +35,7 @@ android {
 
 dependencies {
 
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation(libs.appcompat)
     implementation(libs.material)

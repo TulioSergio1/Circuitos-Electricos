@@ -23,6 +23,7 @@ public interface AlunoDao {
     @Query("SELECT * FROM aluno")
     public List<Aluno> getAlunos();
 
-
+    @Query("SELECT * FROM aluno LIMIT 1")
+    Aluno getAluno();
 
 }

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,8 @@ import android.widget.TextView;
 
 import com.example.circuitoseltricos.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import pl.droidsonroids.gif.GifImageView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,7 +50,7 @@ public class SistemaEletrico extends Fragment {
     private ImageButton buttonInfo;
     private ImageButton buttonFechar;
 
-    private ImageView lightView;
+    private GifImageView gifImageView;
 
     private TextView dadosTextView;
     private TextView dadosMinTextView;
@@ -102,7 +105,7 @@ public class SistemaEletrico extends Fragment {
         buttonInfo = view.findViewById(R.id.buttonInfo);
         buttonFechar = view.findViewById(R.id.fecharIcon);
 
-        lightView = view.findViewById(R.id.lightView2);
+        gifImageView = view.findViewById(R.id.gifImageView);
 
         floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
@@ -141,8 +144,6 @@ public class SistemaEletrico extends Fragment {
                 if ((dadosMaxTextView.getVisibility() == View.INVISIBLE) && (dadosMinTextView.getVisibility() == View.INVISIBLE) ){
                     ativarSistema();
                 }
-            } else {
-                desativarSistema();
             }
 
         });
@@ -150,9 +151,12 @@ public class SistemaEletrico extends Fragment {
         dadosMax.setOnClickListener(view1 -> {
 
             if (botoesAtivados[0] == true){
-                dadosTextView.setVisibility(View.INVISIBLE);
-                dadosMinTextView.setVisibility(View.INVISIBLE);
-                dadosMaxTextView.setVisibility(View.VISIBLE);
+                if (gifImageView.getVisibility() == View.INVISIBLE){
+                    dadosTextView.setVisibility(View.INVISIBLE);
+                    dadosMinTextView.setVisibility(View.INVISIBLE);
+                    dadosMaxTextView.setVisibility(View.VISIBLE);
+                }
+
             }
 
         });
@@ -160,9 +164,11 @@ public class SistemaEletrico extends Fragment {
         dadosMin.setOnClickListener(view1 -> {
 
             if (botoesAtivados[0] == true){
-                dadosTextView.setVisibility(View.INVISIBLE);
-                dadosMinTextView.setVisibility(View.VISIBLE);
-                dadosMaxTextView.setVisibility(View.INVISIBLE);
+                if (gifImageView.getVisibility() == View.INVISIBLE){
+                    dadosTextView.setVisibility(View.INVISIBLE);
+                    dadosMinTextView.setVisibility(View.VISIBLE);
+                    dadosMaxTextView.setVisibility(View.INVISIBLE);
+                }
             }
         });
 
@@ -170,21 +176,24 @@ public class SistemaEletrico extends Fragment {
     }
 
 
-    // Método para ativar o sistema
-    private void ativarSistema() {
-        lightView.setVisibility(View.VISIBLE);
 
-        ObjectAnimator fadeIn = ObjectAnimator.ofFloat(lightView, "alpha", 0.1f, 1.0f);
-        fadeIn.setDuration(6000); // Duração de 6 segundos para aumentar o brilho
-        fadeIn.start();
+    public void ativarSistema() {
+        gifImageView.setVisibility(View.VISIBLE);
 
-        dadosTextView.setVisibility(View.VISIBLE);
-    }
+        // Aguarda 6 segundos e então oculta o GIF e mostra a outra imagem
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                    gifImageView.setVisibility(View.INVISIBLE);
+                    dadosTextView.setVisibility(View.VISIBLE);
 
-    // Método para desativar ou manter o sistema desativado
-    private void desativarSistema() {
-        lightView.setVisibility(View.INVISIBLE); // Ou mantenha oculto
-    }
+                    ObjectAnimator fadeInImage = ObjectAnimator.ofFloat(dadosTextView, "alpha", 0.1f, 1.0f);
+                    fadeInImage.setDuration(3000); // Duração de 6 segundos para aumentar o brilho da imagem
+                    fadeInImage.start();
+                }
+            }, 3000); // 6 segundos de espera antes de trocar as visibilidades
+        }
+
 
     private void mostrarDialog() {
         // Cria o dialog

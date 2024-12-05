@@ -1,17 +1,24 @@
 package com.example.circuitoseltricos.fragmentos;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.circuitoseltricos.Aluno;
+import com.example.circuitoseltricos.AppDatabase;
 import com.example.circuitoseltricos.R;
+import com.example.circuitoseltricos.recycleView.AlunoAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,18 +33,11 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private RecyclerView alunosRecycleView;
+    private AlunoAdapter alunoAdapter;
+
     public ProfileFragment() {
         // Required empty public constructor
-    }
-
-    public static ProfileFragment newInstance(String nome, String periodo, String curso) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        args.putString("nome", nome);
-        args.putString("periodo", periodo);
-        args.putString("curso", curso);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -49,6 +49,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,19 +59,21 @@ public class ProfileFragment extends Fragment {
         TextView nomeTextView = view.findViewById(R.id.nomeTextView);
         TextView periodoTextView = view.findViewById(R.id.periodoTextView);
         TextView cursoTextView = view.findViewById(R.id.cursoTextView);
+        alunosRecycleView = view.findViewById(R.id.alunosRecycleView);
+        AppDatabase instance = AppDatabase.getInstance(getContext());
+        List<Aluno> listaDeAlunos = instance.getAlunoDao().getAlunos();
 
-        // Obter dados da Intent
-        if (getActivity() != null) {
-            Intent intent = getActivity().getIntent();
-            String nome = intent.getStringExtra("nome");
-            String periodo = intent.getStringExtra("periodo");
-            String curso = intent.getStringExtra("curso");
-
-            // Atualizar os TextViews
-            nomeTextView.setText(nome);
-            periodoTextView.setText(periodo);
-            cursoTextView.setText(curso);
+        if (listaDeAlunos != null){
+            new Thread(() -> {
+                getActivity().runOnUiThread(() -> {
+                    alunosRecycleView.setLayoutManager(new LinearLayoutManager(requireContext()));
+                    alunoAdapter = new AlunoAdapter(listaDeAlunos);
+                    alunosRecycleView.setAdapter(alunoAdapter);
+                });
+            }).start();
         }
+
+
 
         return view;
     }

@@ -48,16 +48,14 @@ public class CadastroActivity extends AppCompatActivity {
                 String periodo = periodoEditText.getText().toString().trim();
                 String curso = cursoSpinner.getSelectedItem().toString();
 
-                if (!nome.equals("") && !periodo.equals("")){
+                if (!nome.equals("") && !periodo.equals("") && !curso.equals("Selecione seu curso")){
+
                     Aluno aluno = new Aluno(nome, periodo, curso);
                     instance.getAlunoDao().inserir(aluno);
                     nomeEditText.setText("");
                     periodoEditText.setText("");
                     Toast.makeText(getApplicationContext(), "Dados salvos!!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("nome", nome);
-                    intent.putExtra("periodo", periodo);
-                    intent.putExtra("curso", curso);
                     startActivity(intent);
                 }
             }

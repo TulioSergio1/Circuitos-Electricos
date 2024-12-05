@@ -11,33 +11,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/background_modo_noturno"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_semibold"
             android:layout_marginTop="50dp"
-            android:background="@drawable/background_config"
+            android:text="Sobre o Aplicativo"
+            android:textSize="38sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="20dp"
-                android:text="Modo Noturno" />
-
-            <Switch
-                android:id="@+id/modo_noturno_switch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="20dp" />
-
-        </RelativeLayout>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:text="A aplicação consiste em uma composição de nota da disciplina de Tópicos Especiais com interdisciplinilaridade com a matéria de Circuitos Elétricos do curso de Enérgia Renováveis. A aplicação possui uma instalação elétrica com 10 placas solares e um inversor solar que transfoma a voltagem emitida pelos módulos fotovoltaicos, assim como a visualização da energia gerada por mês nos mêses de Junho e Novembro."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
