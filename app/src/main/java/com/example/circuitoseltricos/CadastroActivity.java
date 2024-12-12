@@ -15,6 +15,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.ads.MobileAds;
+
 public class CadastroActivity extends AppCompatActivity {
 
     private Button cadastrarButton;
@@ -38,6 +40,12 @@ public class CadastroActivity extends AppCompatActivity {
         periodoEditText = findViewById(R.id.periodoEditText);
         cursoSpinner = findViewById(R.id.cursoSpinner);
 
+        new Thread(
+                () -> {
+                    // Initialize the Google Mobile Ads SDK on a background thread.
+                    MobileAds.initialize(this, initializationStatus -> {});
+                })
+                .start();
 
         AppDatabase instance = AppDatabase.getInstance(getApplicationContext());
 
